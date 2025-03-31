@@ -1,10 +1,51 @@
-* {
+
+body {
+	background: whitesmoke;
+	color: cornflowerblue;
+	Font-family: monospace;
+}
+
+h1 {
+    font-family: monospace;
+    font-display: ;
+
+}
+
+#li {
+	color: white;
+
+  }
+
+.letter {
+	color: lightpink;
+}
+
+
+
+/* id 일 경우 #아이디이름 {}*/
+/* class 일 경우 .클래스이름 {}*/
+#drop-cap {
+	color: red;
+	font-size: 100px;
+	font-family: cursive;
+}
+
+
+
+/* 태그일 경우
+span {
+	
+}
+*/
+
+
+/* * {
 	margin:  0px;
 	padding:  0px;
 	box-sizing: border-box;
 }
 
-/* adjusting fonts */
+adjusting fonts 
 
 body {
 	font-family: -apple-system, BlinkMacSystemFont, helvetica, arial, sans-serif;
@@ -15,8 +56,10 @@ p, li {
 	font-size:  22px;
 	line-height: 30px;
 }
+*/
 
-/* adjusting spacing */
+
+/* adjusting spacing 
 
 #left-column {
 	padding: 20px;
@@ -34,6 +77,9 @@ img {
 	max-width: 100%;
 	height:  auto;
 }
+
+*/
+
 
 /* uncomment the code below to set the grid */
 
