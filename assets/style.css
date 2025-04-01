@@ -10,6 +10,7 @@ h1 {
     font-display: ;
     text-shadow: 1px 1px 2px royalblue;
 
+
 }
 
 #li {
@@ -24,7 +25,8 @@ h1 {
 
 
 /* id 일 경우 #아이디이름 {}*/
-/* class 일 경우 .클래스이름 {}*/
+/* class 일 경우 .클래스이름 {}
+    text-align: center;*/
 #drop-cap {
 	color: red;
 	font-size: 100px;
