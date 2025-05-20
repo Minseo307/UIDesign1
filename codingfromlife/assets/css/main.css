@@ -1,0 +1,371 @@
+body {
+	background: #ffffff;
+}
+
+#align {
+	display: flex;
+  align-items: center;
+  justify-content: center;	
+  height: 100vh;
+}
+
+
+#ramen-head {
+	width: 180px;
+  height: 5px;
+  background: black;
+	  bottom: 520px;
+	  left: 155px;
+	  position: absolute;
+}
+
+#ramen-decoration {
+  width: 208px;
+  height: 50px;
+  background: black;
+  position: absolute;
+  bottom: 0px;
+}
+
+#ramen-name-inside {
+		width: 20px;
+    height: 18px;
+    background: white;
+    clip-path: polygon(0 0, 100% 0, 84% 100%, 19% 100%);
+    left: 42px;
+    bottom: 76px;
+    position: absolute;
+}
+
+#ramen-name {
+  width: 120px;
+  height: 120px;
+  clip-path: polygon(13% 11%, 43% 10%, 43% 3%, 54% 4%, 55% 11%, 83% 10%, 82% 19%, 65% 19%, 61% 37%, 94% 36%, 94% 45%, 53% 46%, 52% 63%, 73% 63%, 72% 73%, 52% 74%, 50% 96%, 40% 97%, 40% 72%, 21% 71%, 22% 61%, 40% 62%, 40% 47%, 6% 46%, 6% 38%, 29% 38%, 25% 22%, 14% 22%);
+  background: black;
+  position: absolute;
+  left: 30px;
+  bottom: 60px;
+}
+
+#ramen-body {
+	width: 200px;
+	height: 200px;
+	background: red;
+	clip-path: polygon(5% 0, 95% 0, 75% 100%, 21% 100%);
+  bottom: 320px;
+  left: 145px;
+	position: absolute;
+}
+
+#apple-body {
+	width: 150px;
+	height: 150px;
+	background: linear-gradient(red,lightgoldenrodyellow);
+	clip-path: polygon(15% 18%, 36% 14%, 56% 21%, 85% 23%, 98% 35%, 100% 60%, 94% 87%, 77% 98%, 45% 100%, 24% 98%, 6% 71%, 1% 39%);
+  bottom: 300px;
+  left: 250px;
+	position: absolute;
+}
+
+#apple-stick {
+	width: 30px;
+	height: 30px;
+	background: saddlebrown;
+	clip-path: polygon(45% 10%, 29% 42%, 29% 72%, 30% 83%, 39% 83%, 39% 58%, 50% 31%, 63% 22%);
+  bottom: 414px;
+  left: 319px;
+	position: absolute;
+}
+
+
+
+#can {
+    display: flex;
+    position: absolute;
+    bottom: 300px;
+    flex-direction: column;
+}
+
+#can-body {
+  width: 100px;
+  height: 242px;
+  background: blue;
+  position:relative;
+  border-radius: 10px;
+}
+
+
+#can-head {
+  width: 100px;
+  height: 10px;
+  background: lightgray;
+  position:relative;
+  border-radius: 2px;
+}
+
+#can-foot {
+  width: 100px;
+  height: 10px;
+  background: lightgray;
+  position:relative;
+  border-radius: 2px;
+}
+
+
+
+#can {
+    display: flex;
+    position: absolute;
+    bottom: 300px;
+    flex-direction: column;
+    left: 430px;
+}
+
+
+#doll {
+	   display: flex;
+    position: absolute;
+    bottom: 265px;
+    left: 530px;
+    flex-direction: column;
+}
+
+
+#doll-face {
+  width: 200px;
+  height: 200px;
+  clip-path: ellipse(25% 33% at 59% 50%);
+  background: #FFF1C8;
+  position: relative;
+  left: 6px;
+  bottom: -250px;
+  border-radius: 130px;
+}
+
+
+
+#doll-head {
+  width: 200px;
+  height: 200px;
+	clip-path: ;clip-path: polygon(67% 0, 78% 23%, 100% 42%, 70% 47%, 67% 97%, 45% 100%, 15% 95%, 1% 62%, 1% 27%, 26% 0);
+  position:relative;
+  bottom: -20px;
+  border-radius: 100px;
+}
+
+
+#face-pattern {
+	width: 200px;
+	height: 50px;
+	bottom: -150px;
+	position:relative;
+}
+
+
+
+
+
+#doll-nose {
+	width: 100px;
+  height: 100px;
+  left: 141px;
+  bottom: 163px;
+  position: relative;
+  clip-path: ellipse(34% 28% at 50% 50%);
+  background: #FFF1C8;
+}
+
+
+#doll-body {
+    width: 180px;
+    height: 180px;
+    clip-path: polygon(49% 11%, 80% 14%, 100% 43%, 91% 70%, 77% 89%, 45% 95%, 20% 89%, 0% 70%, 0% 35%, 20% 14%);
+    position: relative;
+		bottom: -933px;
+    left: 10px;
+    border-radius: 50px;
+}
+
+
+#body-pattern	{
+	width: 100px;
+  height: 200px;
+  bottom: 0px;
+  left: 120px;
+  position: relative;
+}
+
+
+
+#doll-arm {
+    width: 100px;
+    height: 80px;
+    clip-path: polygon(36% 0, 64% 0, 83% 100%, 19% 100%);
+    bottom: -597px;
+    left: 52px;
+    position: relative;
+}
+
+
+#doll-hand {
+    width: 140px;
+    height: 80px;
+    clip-path: ellipse(25% 33% at 59% 50%);
+    position: relative;
+    left: 20px;
+    bottom: -560px;
+    border-radius: 130px;
+}
+
+
+#doll-leg {
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(0 36%, 100% 13%, 100% 100%, 0 62%);
+		bottom: -860px;
+    left: 80px;
+    position: relative;
+
+}
+
+#doll-foot {
+    width: 80px;
+    height: 100px;
+    bottom: -765px;
+    left: 160px;
+    position: relative;
+    border-radius: 30px;
+}
+
+
+#doll-ear {
+    width: 100px;
+    height: 80px;
+    clip-path: polygon(36% 0, 64% 0, 83% 100%, 19% 100%);
+    bottom: 206px;
+    left: 27px;
+    position: relative;
+}
+
+
+#ear-pattern {
+    width: 50px;
+    height: 80px;
+    bottom: 0px;
+    left: 57px;
+    position: relative;
+}
+
+
+#doll-eye {
+    width: 30px;
+    height: 45px;
+    clip-path: ellipse(25% 33% at 59% 50%);
+    background: saddlebrown;
+    position: relative;
+    left: 140px;
+    bottom: 260px;
+    border-radius: 130px;
+}
+
+
+
+.white	{
+    background: linear-gradient(white, lightgray);
+}
+
+.yellow  {
+   background: linear-gradient(#FFE46B, #FFC118);
+}
+
+
+
+
+/* 
+#stage {
+	width: 900px;
+	height: 556px;
+	margin: auto;
+	background: white;
+	position: relative;
+}*/
+/* 
+#triangle {
+	width: 0;
+	height: 0;
+	border-left: 75px solid transparent;
+	border-right: 75px solid transparent;
+	border-bottom: 150px solid yellow;
+	position: absolute;
+	top: 203px;
+	left: 60px;
+}
+*/
+/*
+#square {
+	width: 150px;
+	height: 150px;
+	background: red;
+	top: 203px;
+	left: 270px;
+	position: absolute;
+
+}
+	/* uncomment to add keyframe animation */
+	/* animation: spin 2s infinite; */
+
+/*
+
+#circle {
+	width: 150px;
+	height: 150px;
+	background: blue;
+	border-radius: 150px;
+	top: 203px;
+	left: 480px;
+	position: absolute;
+}
+
+#clip {
+	width: 150px;
+	height: 150px;
+	background: green;
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	top: 203px;
+	left: 690px;
+	position: absolute;
+
+
+}
+*/ 
+	/* uncomment for css transitions */
+/* transition: all 400ms ease; */
+
+/* animations */
+
+
+#clip:hover {
+	/*transform: rotate(1200deg);*/
+	transform: skewX(10deg);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes move {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
+
+
