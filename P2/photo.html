@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><-♥︎-<< Profile Selection</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="img/favicon-4.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Tenor+Sans&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="heart-border">  
+            <div class="heart heart-top">♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Photo Upload Page -->
+            <div class="screen" id="photo-screen">
+                <div class="content">
+                    <h1> Choose or Upload Profiles of Reciever's and Your Face. </h1>
+
+                    <div class="photo-section">
+                        <!-- receiver's photo section -->
+                        <div class="photo-group">
+                            <div class="photo-receiver-name">
+                                <label for="receiver-name">To. </label>
+                                <span id="receiver-name-display"></span>
+                            </div>
+                            <div class="photo-preview" id="receiver-preview"></div>
+                            <div class="photo-options">
+                                <button class="photo-option" onclick="selectPhoto('receiver', 'img/face_male_1.jpg')">
+                                    <img src="img/face_male_1.jpg" alt="Male option" class="option-img">
+                                </button>
+
+                                <button class="photo-option" onclick="selectPhoto('receiver', 'img/face_female_1.jpg')">
+                                    <img src="img/face_female_1.jpg" alt="Female option" class="option-img">
+                                </button>
+
+                                <button class="photo-option" onclick="document.getElementById('receiver-file').click()">+</button>
+                                <input type="file" id="receiver-file" accept="image/*" style="display: none;" onchange="uploadPhoto('receiver', this)">
+                            </div>
+                        </div>
+
+                        <!-- arrows -->
+                        <div class="arrow">
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                        </div>
+
+                        <!-- sender's photo section -->
+                        <div class="photo-group">
+                            <div class="photo-sender-name">
+                                <label for="sender-name">From. </label>
+                                <span>You</span>
+                            </div>
+                            <div class="photo-preview" id="sender-preview"></div>
+                            <div class="photo-options">
+                                <button class="photo-option" onclick="selectPhoto('sender', 'img/face_male_1.jpg')">
+                                    <img src="img/face_male_1.jpg" alt="Male option" class="option-img">
+                                </button>
+
+                                <button class="photo-option" onclick="selectPhoto('sender', 'img/face_female_1.jpg')">
+                                    <img src="img/face_female_1.jpg" alt="Female option" class="option-img">
+                                </button>
+
+                                <button class="photo-option" onclick="document.getElementById('sender-file').click()">+</button>
+                                <input type="file" id="sender-file" accept="image/*" style="display: none;" onchange="uploadPhoto('sender', this)">
+                            </div>
+                        </div>
+                        
+                        <div class="navigation-buttons">
+                            <div class="back-btn-wrap">
+                                <img src="img/back-button-shadow.png" alt="Back button shadow">
+                                <button class="back-btn" id="photo-back-btn">Back</button>
+                            </div>
+                            <div class="next-btn-wrap">
+                                <img src="img/next-button-shadow.png" alt="Next button shadow">
+                                <button class="next-btn" id="photo-next-btn">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="heart-border">
+            <div class="heart heart-bottom">♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎
+            </div>
+            
+        </div>
+
+
+
+
+
+        <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            // localStorage.getItem('receiverName') 이란: 브라우저 로컬 저장소(localStorage)에서 'receiverName'이라는 이름(key)으로 저장된 값을 가져옴.
+            //.getItem(key): 저장된 문자열(string)을 꺼내는 메서드.
+            const receiverName = localStorage.getItem('receiverName');
+
+            //receiverName이 참이 아니면(==receiverName이 비어 있거나 null/undefined이면)
+            if (!receiverName) {
+                // 브라우저 주소창(URL)을 'index.html'로 바꿔서 해당 페이지로 이동(navigate) 시킴.
+                //window: 전역(global) 객체.
+                //.location.href: 현재 페이지 주소를 읽거나 바꿔라
+                //=: 다시 정의하는 것. -> 페이지 이동 효과가 있음
+                window.location.href = 'index.html';
+
+                //아래 코드를 더 이상 실행하지 않도록 중단.
+                return;
+            }
+
+            // Display receiver name in the photo-receiver-name section
+            const receiverNameDisplay = document.getElementById('receiver-name-display');
+            if (receiverNameDisplay && receiverName) {
+                receiverNameDisplay.textContent = receiverName;
+            }
+            
+            const photoBackBtn = document.getElementById('photo-back-btn');
+            const photoNextBtn = document.getElementById('photo-next-btn');
+
+            // Back button functionality
+            photoBackBtn.addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+
+            // Next button functionality
+            photoNextBtn.addEventListener('click', function() {
+                const receiverPreview = document.getElementById('receiver-preview');
+                const senderPreview = document.getElementById('sender-preview');
+                
+                const receiverPhoto = receiverPreview.getAttribute('data-src');
+                const senderPhoto = senderPreview.getAttribute('data-src');
+                
+                //||: 논리 OR
+                if (!receiverPhoto || !senderPhoto) {
+                    alert('Please select both photos before continuing.');
+                    return;
+                }
+                
+                // Store selected photos in localStorage
+                localStorage.setItem('receiverPhoto', receiverPhoto);
+                localStorage.setItem('senderPhoto', senderPhoto);
+                
+                // Navigate to the next page (adjust the URL as needed)
+                window.location.href = 'type.html';
+            });
+        });
+
+        // <Function to select a pre-defined photo>
+         //전역(global) 범위에 selectPhoto라는 일반 함수를 선언.
+         //function 함수명(매개변수1, 매개변수2) {}
+        function selectPhoto(type, src) {
+            const previewElement = document.getElementById(type + '-preview');
+            
+            // Clear any existing content
+            //이전에 보여주던 이미지나 내용이 있다면 삭제하고, 새로운 이미지로만 채우기 위해 사용하는 코드
+            //innerHTML: 요소 내부의 HTML 코드를 문자열로 읽거나, 새 HTML로 바로 덮어쓰기 하는 속성(property).
+            previewElement.innerHTML = '';
+            
+            // Create and add the image
+            const img = document.createElement('img');
+
+            //생성한 <img> 요소의 src 속성에 이미지 경로(또는 base64 문자열)를 설정. 
+            img.src = src;
+
+            //<img> 태그의 alt 속성을 설정.   예) type='receiver'인 경우 alt='receiver photo'.
+            img.alt = type + ' photo';
+
+            img.style.width = '100%';
+
+            img.style.height = '100%';
+
+            //자식 이미지를 부모 요소 크기에 맞춰 자르거나 늘려서 비율 유지하며 채우도록 지시
+            img.style.objectFit = 'cover';
+            img.style.borderRadius = '8px';
+
+            // <img> 요소(img 변수)를 previewElement 요소 내부에 자식(child)으로 추가
+            previewElement.appendChild(img);
+            
+            // Store the source for later use
+            //previewElement에 data-src라는 HTML 속성(attribute) 를 만들어 src 값을 저장.
+            previewElement.setAttribute('data-src', src);
+        }
+
+        // <Function to handle photo upload>
+        function uploadPhoto(type, input) {
+            const file = input.files[0];
+            if (!file) return;
+            
+            // Check if the file is an image
+            if (!file.type.startsWith('image/')) {
+                alert('Please select an image file.');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const previewElement = document.getElementById(type + '-preview');
+                
+                // Clear any existing content
+                previewElement.innerHTML = '';
+                
+                // Create and add the image
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.alt = type + ' photo';
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+                img.style.borderRadius = '8px';
+
+                img.classList.add('blurred');
+
+                previewElement.appendChild(img);
+                
+                // Store the source for later use
+                previewElement.setAttribute('data-src', e.target.result);
+            };
+            
+            reader.readAsDataURL(file);
+        }
+        </script>
+    </body>
+</html>

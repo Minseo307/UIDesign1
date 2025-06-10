@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><-♥︎-<< ※Sencerity Verification※</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/favicon-4.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Tenor+Sans&display=swap" rel="stylesheet">
+</head>
+<body class="verification-body">
+    <div class="heart-border">  
+        <div class="heart heart-top">♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎
+        </div>
+    </div>
+    <div class="verification-container">
+        <!-- Type Selection Screen -->
+        <div class="screen" id="verification-screen">
+            <div class="content">
+                <div class="verification-border">
+                    <h1 class="verification-title">※ Sincerity Verification Tool ※</h1>
+                </div>
+
+                <div class="verification-content">
+                    <h2 class="verification-question">Are you engaging with <span class="highlight-underline">genuine sincerity</span>?</h2>
+
+                    <p class="verification-text">Participation is NOT allowed</p>
+                    <p class="verification-text">unless you are engaging with genuine sincerity.</p>
+                </div>
+
+                <div class="checkbox-section">
+                    <div class="checkbox" id="sincerity-checkbox" onclick="toggleCheckbox()"></div>
+                    <h2 class="checkbox-label">I am fully committed with true sincerity.</h2>
+                </div>
+
+                <div class="navigation-buttons">
+                    <div class="back-btn-wrap">
+                        <img src="img/back-button-shadow.png" alt="Back button shadow">
+                        <button class="back-btn" id="verification-back-btn">Back</button>
+                    </div>
+                    <div class="next-btn-wrap">
+                        <img src="img/next-button-shadow.png" alt="Next button shadow">
+                        <button class="next-btn" id="verification-next-btn" disabled>Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="heart-border">
+        <div class="heart heart-bottom">♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎
+        </div>
+    </div>
+
+    <script>
+        let isChecked = false; // 전역 변수로 이동
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const typeBackBtn = document.getElementById('verification-back-btn');
+            const typeNextBtn = document.getElementById('verification-next-btn');
+            const sincerityCheckbox = document.getElementById('sincerity-checkbox');
+            const nextBtnWrap = document.querySelector('.next-btn-wrap');
+
+            // Function to update button shadow visibility
+            function updateButtonShadow() {
+                const shadowImg = nextBtnWrap.querySelector('img');
+                if (typeNextBtn.disabled) {
+                    shadowImg.style.opacity = '0';
+                } else {
+                    shadowImg.style.opacity = '1';
+                }
+            }
+            
+            // Initial shadow state
+            updateButtonShadow();
+
+            // Back button functionality
+            typeBackBtn.addEventListener('click', function() {
+                window.location.href = 'type.html';
+            });
+
+            // Next button functionality
+            typeNextBtn.addEventListener('click', function() {
+                if (isChecked) {
+                    // Store verification status in localStorage
+                    localStorage.setItem('sincerityVerified', 'true');
+                    window.location.href = 'result.html';
+                }
+            });
+        });
+
+        // Toggle checkbox function
+        function toggleCheckbox() {
+            const checkbox = document.getElementById('sincerity-checkbox');
+            const nextBtn = document.getElementById('verification-next-btn');
+            const nextBtnWrap = document.querySelector('.next-btn-wrap');
+            
+            // Function to update button shadow visibility
+            function updateButtonShadow() {
+                const shadowImg = nextBtnWrap.querySelector('img');
+                if (nextBtn.disabled) {
+                    shadowImg.style.opacity = '0';
+                } else {
+                    shadowImg.style.opacity = '1';
+                }
+            }
+            
+            // Toggle the checked state
+            if (checkbox.classList.contains('checked')) {
+                checkbox.classList.remove('checked');
+                checkbox.innerHTML = '';
+                nextBtn.disabled = true;
+                nextBtn.classList.remove('enabled');
+                isChecked = false;
+            } 
+            else {
+                checkbox.classList.add('checked');
+                checkbox.innerHTML = '♥︎';
+                nextBtn.disabled = false;
+                nextBtn.classList.add('enabled');
+                isChecked = true;
+            }
+            
+            updateButtonShadow();
+        }   
+    </script>
+</body>
+</html>

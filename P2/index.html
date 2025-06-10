@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><-♥︎-<< Home</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="img/favicon-4.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Tenor+Sans&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="heart-border">  
+            <div class="heart heart-top">♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎
+            </div>
+        </div>
+        <div class="container">
+            <!-- Home Screen -->
+            <div class="screen" id="home-screen">
+                <div class="content">
+                    <h1>How to Deliver Your ♥︎</h1>
+                    <p class="paragraph">Let's find one special heartfelt way to deliver your ♥︎! </p>
+                    <div class="input-group">
+                        <div class="receiver-section">
+                            <img src="img/face_female_1.jpg" alt="Female option" class="profile-img">
+                            <div class="receiver-name-section">
+                                <label for="receiver-name">To.</label>
+                                <input type="text" id="receiver-name" placeholder="Receiver's name">
+                            </div>
+                        </div>
+                        <div class="arrow">
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                            <span class="arrow-heart">♥︎</span>
+                        </div>
+                        <div class="sender-section">
+                            <img src="img/face_male_1.jpg" alt="Male option" class="profile-img">
+                            <div class="sender-name-section">
+                                <span class="sender-label">From.</span>
+                                <span id="sender-name">You</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary-btn" id="home-next-btn">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="heart-border">
+            <div class="heart heart-bottom">♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const receiverNameInput = document.getElementById('receiver-name');
+                const homeNextBtn = document.getElementById('home-next-btn');
+                
+                homeNextBtn.addEventListener('click', function() {
+                    const receiverName = receiverNameInput.value.trim();
+                    if (receiverName) {
+                        localStorage.setItem('receiverName', receiverName);
+                        // Navigate to type.html instead of photo.html
+                        window.location.href = 'type.html';
+                    } 
+                    else {
+                        alert('Please enter a name');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
+

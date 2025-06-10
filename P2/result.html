@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><-♥︎-<< Suggestion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/favicon-4.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Tenor+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="heart-border">  
+        <div class="heart heart-top">♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎
+        </div>
+    </div>
+    <div class="container">
+        <!-- Roulette Screen -->
+        <div class="screen" id="roulette-screen">
+            <div class="content">
+                <h1 id="roulette-title">Suggestion for You</h1>
+                <p id="roulette-category" class="paragraph">Category: <span id="selected-category"></span></p>
+                
+                <div class="roulette-container">
+                    <div class="roulette-spinner">
+                        <div class="roulette-content" id="roulette-content">
+                            <p id="roulette-description">Click Spin to start</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn primary-btn" id="spin-btn">Spin</button>
+                
+                <div class="navigation-buttons">
+                    <div class="back-btn-wrap">
+                        <img src="img/back-button-shadow.png" alt="Back button shadow">
+                        <button class="back-btn" id="roulette-back-btn">Back</button>
+                    </div>
+                    <div class="next-btn-wrap">
+                        <img src="img/next-button-shadow.png" alt="Next button shadow">
+                        <button class="next-btn" id="restart-btn">Restart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="decoration decoration-4"></div>
+            <div class="decoration decoration-5"></div>
+        </div>
+    </div>
+    <div class="heart-border">
+        <div class="heart heart-bottom">♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎♥︎
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const receiverName = localStorage.getItem('receiverName');
+            const selectedType = localStorage.getItem('selectedType');
+
+            if (!receiverName || !selectedType) {
+                window.location.href = receiverName ? 'type.html' : 'index.html';
+                return;
+            }
+
+            const selectedCategorySpan = document.getElementById('selected-category');
+            const rouletteContent = document.getElementById('roulette-content');
+            const spinBtn = document.getElementById('spin-btn');
+            const rouletteBackBtn = document.getElementById('roulette-back-btn');
+            const restartBtn = document.getElementById('restart-btn');
+
+            let isSpinning = false;
+
+            selectedCategorySpan.textContent = selectedType.charAt(0).toUpperCase() + selectedType.slice(1);
+
+            const options = {
+                gift: [
+                    "photos of 10 things",
+                    "3 shells",
+                    "3 stones",
+                    "a book",
+                    "handmade cookies",
+                    "a bento",
+                    "a hand-knitted scarf",
+                    "a couple of cups",
+                    "seasonal fruit",
+                    "a bag",
+                    "a dinner reservation",
+                    "gloves",
+                    "an accessorie",
+                    "your diary",
+                    "a small keyring",
+                    "a sticker",
+                    "a perfume",
+                    "100 paper cranes",
+                    "a Tamagotchi", 
+                    "5 lollipops",
+                    "a bouquet"
+                ],
+                giftModes: ["face-to-face", "remote"],
+                giftMeanings: [
+                    "means you love him or her",
+                ],
+                letter: {
+                    styles: ["cool", "warm", "humorous", "formal", "celebrity-style"],
+                    topics: [
+                        "10 things you love about him or her",
+                        "what he or she mean to you",
+                        "5 things you want to do in the future",
+                        "5 shared memories",
+                        "3 secrets you have never told him or her",
+                        "what your relationship would be if reincarnated"
+                    ],
+                    methods: [
+                        "handwritten letter",
+                        "email",
+                        "chat",
+                        "memo",
+                        "video call",
+                        "phone call",
+                        "voice message"
+                    ]
+                },
+                activity: {
+                    times: ["morning", "afternoon", "evening", "late night"],
+                    places: [
+                        "your house",
+                        "your most-visited restaurant",
+                        "a bench in a nearby park",
+                        "the beach",
+                        "the mountain",
+                        "a school",
+                        "a playground",
+                        "a convenience store",
+                        "a new restaurant",
+                        "the 15th bus stop from home",
+                        "abroad",
+                        "a swimming pool"
+                    ],
+                    actions: [
+                        "act like strangers meeting for the first time",
+                        "whisper a secret",
+                        "sing for him or her",
+                        "tell dad jokes",
+                        "say something flirty",
+                        "dance for him or her",
+                        "suggest a walk",
+                        "treat him or her to a meal",
+                        "show a magic trick",
+                        "pat his or her head",
+                    ]
+                }
+            };
+
+            // Helper function to create receiver preview div (only name, no photo)
+            function createReceiverPreview() {
+                const receiverDiv = document.createElement('div');
+                receiverDiv.className = 'receiver-preview';
+                receiverDiv.dataset.textVisible = 'false';
+                
+                const nameDiv = document.createElement('div');
+                nameDiv.className = 'receiver-name';
+                nameDiv.textContent = receiverName;
+                receiverDiv.appendChild(nameDiv);
+                
+                // Add click event for receiver preview
+                receiverDiv.addEventListener('click', function() {
+                    const isTextVisible = receiverDiv.dataset.textVisible === 'true';
+                    
+                    if (isTextVisible) {
+                        // Hide text and remove blur
+                        receiverDiv.classList.remove('show-text');
+                        receiverDiv.classList.remove('blur-background');
+                        receiverDiv.dataset.textVisible = 'false';
+                    } else {
+                        // Show text and add blur
+                        receiverDiv.classList.add('show-text');
+                        receiverDiv.classList.add('blur-background');
+                        receiverDiv.dataset.textVisible = 'true';
+                    }
+                });
+                
+                return receiverDiv;
+            }
+
+            // Helper function to calculate scratch percentage
+            function calculateScratchPercentage(scratchBox) {
+                const bubbles = scratchBox.querySelectorAll('.scratch-bubble');
+                const boxRect = scratchBox.getBoundingClientRect();
+                const totalArea = boxRect.width * boxRect.height;
+                const bubbleArea = bubbles.length * 400; // Each bubble is 20x20 = 400px²
+                
+                return Math.min((bubbleArea / totalArea) * 100, 100);
+            }
+
+            // Helper function to create scratch box
+            function createScratchBox(id, className, selectedItem, imageUrl) {
+                // Create wrapper div
+                const wrapper = document.createElement('div');
+                wrapper.className = 'scratch-wrapper';
+                
+                // Create scratch box with unique id based on category and item
+                const scratchBox = document.createElement('div');
+                const uniqueId = `${className.replace('-box', '')}_${selectedItem.replace(/[^a-zA-Z0-9]/g, '-')}`;
+                scratchBox.id = uniqueId;
+                scratchBox.className = className;
+                scratchBox.dataset.imageUrl = imageUrl;
+                scratchBox.dataset.text = selectedItem;
+                scratchBox.dataset.textVisible = 'false';
+                
+                // Set fixed height
+                scratchBox.style.height = '100px';
+                
+                // Create fixed text overlay
+                const textOverlay = document.createElement('div');
+                textOverlay.className = 'scratch-text-overlay';
+                textOverlay.textContent = selectedItem;
+                scratchBox.appendChild(textOverlay);
+                
+                // Load image to get dimensions
+                const img = new Image();
+                img.onload = function() {
+                    // Calculate aspect ratio and set width
+                    const aspectRatio = img.width / img.height;
+                    const boxWidth = 100 * aspectRatio;
+                    scratchBox.style.width = boxWidth + 'px';
+                    
+                    // Store image dimensions for scratch bubbles
+                    scratchBox.dataset.imageWidth = boxWidth;
+                    scratchBox.dataset.imageHeight = 100;
+                };
+                img.src = imageUrl;
+
+                // Add click event for text toggle (only when 70% scratched)
+                scratchBox.addEventListener('click', function() {
+                    const scratchPercentage = calculateScratchPercentage(scratchBox);
+                    
+                    if (scratchPercentage >= 70) {
+                        const isTextVisible = scratchBox.dataset.textVisible === 'true';
+                        
+                        if (isTextVisible) {
+                            // Hide text and remove blur
+                            scratchBox.classList.remove('show-text');
+                            scratchBox.classList.remove('blur-background');
+                            scratchBox.dataset.textVisible = 'false';
+                        } else {
+                            // Show text and add blur
+                            scratchBox.classList.add('show-text');
+                            scratchBox.classList.add('blur-background');
+                            scratchBox.dataset.textVisible = 'true';
+                        }
+                    }
+                });
+
+                // Add scratch interaction
+                scratchBox.addEventListener('mousemove', function(e) {
+                    const rect = scratchBox.getBoundingClientRect();
+                    const offsetX = e.clientX - rect.left;
+                    const offsetY = e.clientY - rect.top;
+                    
+                    // Create scratch bubble (only image, no text)
+                    const bubble = document.createElement('div');
+                    bubble.className = 'scratch-bubble';
+                    bubble.style.left = (offsetX - 10) + 'px';
+                    bubble.style.top = (offsetY - 10) + 'px';
+                    bubble.style.backgroundImage = `url(${imageUrl})`;
+                    bubble.style.backgroundSize = `${rect.width}px ${rect.height}px`;
+                    bubble.style.backgroundPosition = `${-offsetX + 10}px ${-offsetY + 10}px`;
+                    bubble.style.backgroundRepeat = 'no-repeat';
+                    
+                    scratchBox.appendChild(bubble);
+                    
+                    // Check if 70% is scratched and add clickable indicator
+                    const scratchPercentage = calculateScratchPercentage(scratchBox);
+                    if (scratchPercentage >= 70) {
+                        scratchBox.classList.add('clickable');
+                    }
+                });
+                
+                wrapper.appendChild(scratchBox);
+                return wrapper;
+            }
+
+            spinBtn.addEventListener('click', function() {
+                if (!isSpinning) {
+                    spinRoulette();
+                }
+            });
+
+            rouletteBackBtn.addEventListener('click', function() {
+                window.location.href = 'verification.html';
+            });
+
+            restartBtn.addEventListener('click', function() {
+                localStorage.removeItem('selectedType');
+                window.location.href = 'index.html';
+            });
+
+            function spinRoulette() {
+                isSpinning = true;
+                spinBtn.disabled = true;
+
+                let template = '';
+
+                if (selectedType === 'gift') {
+                    template = `<div class="first-p">Give <div class="receiver-placeholder"></div></div>
+<br>a <span id="gift-mode" class="spinning-item">...</span> gift 
+<br>such as <span id="gift-item" class="spinning-item">...</span>, 
+<br>that <span id="gift-meaning" class="spinning-item">...</span>.`;
+                    rouletteContent.innerHTML = `<h3>${template}</h3>`;
+
+                    // Replace placeholder with receiver preview
+                    const placeholder = rouletteContent.querySelector('.receiver-placeholder');
+                    const receiverPreview = createReceiverPreview();
+                    placeholder.parentNode.replaceChild(receiverPreview, placeholder);
+
+                    spinSequentially('gift-mode', options.giftModes, 1500, function() {
+                        const selectedMode = document.getElementById('gift-mode').textContent;
+                        const imageUrl = `img/gift-mode_${selectedMode.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
+                        const scratchBox = createScratchBox(
+                            selectedMode.replace(/[^a-zA-Z0-9]/g, '-'),
+                            'gift-mode-box',
+                            selectedMode,
+                            imageUrl
+                        );
+                        document.getElementById('gift-mode').parentNode.replaceChild(scratchBox, document.getElementById('gift-mode'));
+                        
+                        spinSequentially('gift-item', options.gift, 2000, function() {
+                            const selectedItem = document.getElementById('gift-item').textContent;
+                            const imageUrl = `img/gift-item_${selectedItem.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
+                            const scratchBox = createScratchBox(
+                                selectedItem.replace(/[^a-zA-Z0-9]/g, '-'),
+                                'gift-item-box',
+                                selectedItem,
+                                imageUrl
+                            );
+                            document.getElementById('gift-item').parentNode.replaceChild(scratchBox, document.getElementById('gift-item'));
+                            
+                            spinSequentially('gift-meaning', options.giftMeanings, 1500, function() {
+                                const selectedMeaning = document.getElementById('gift-meaning').textContent;
+                                const imageUrl = `img/gift-meaning_${selectedMeaning.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
+                                const scratchBox = createScratchBox(
+                                    selectedMeaning.replace(/[^a-zA-Z0-9]/g, '-'),
+                                    'gift-meaning-box',
+                                    selectedMeaning,
+                                    imageUrl
+                                );
+                                document.getElementById('gift-meaning').parentNode.replaceChild(scratchBox, document.getElementById('gift-meaning'));
+                                
+                                isSpinning = false;
+                                spinBtn.disabled = false;
+                            });
+                        });
+                    });
+                } else if (selectedType === 'letter') {
+                    template = `<div class="first-p">Send <div class="receiver-placeholder"></div></div> <br>a <span id="letter-style" class="spinning-item">...</span> message <br>about <span id="letter-topic" class="spinning-item">...</span> <br>via <span id="letter-method" class="spinning-item">...</span>.`;
+                    rouletteContent.innerHTML = `<h3>${template}</h3>`;
+
+                    // Replace placeholder with receiver preview
+                    const placeholder = rouletteContent.querySelector('.receiver-placeholder');
+                    const receiverPreview = createReceiverPreview();
+                    placeholder.parentNode.replaceChild(receiverPreview, placeholder);
+
+                    spinSequentially('letter-style', options.letter.styles, 1500, function() {
+                        const selectedStyle = document.getElementById('letter-style').textContent;
+                        const imageUrl = `img/letter-style_${selectedStyle.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
+                        const scratchBox = createScratchBox(
+                            selectedStyle.replace(/[^a-zA-Z0-9]/g, '-'),
+                            'letter-style-box',
+                            selectedStyle,
+                            imageUrl
+                        );
+                        document.getElementById('letter-style').parentNode.replaceChild(scratchBox, document.getElementById('letter-style'));
+                        
+                        spinSequentially('letter-topic', options.letter.topics, 2000, function() {
+                            const selectedTopic = document.getElementById('letter-topic').textContent;
+                            const imageUrl = `img/letter-topic_${selectedTopic.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
+                            const scratchBox = createScratchBox(
+                                selectedTopic.replace(/[^a-zA-Z0-9]/g, '-'),
+                                'letter-topic-box',
+                                selectedTopic,
+                                imageUrl
+                            );
+                            document.getElementById('letter-topic').parentNode.replaceChild(scratchBox, document.getElementById('letter-topic'));
+                            
+                            spinSequentially('letter-method', options.letter.methods, 1500, function() {
+                                const selectedMethod = document.getElementById('letter-method').textContent;
+                                const imageUrl = `img/letter-method_${selectedMethod.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
+                                const scratchBox = createScratchBox(
+                                    selectedMethod.replace(/[^a-zA-Z0-9]/g, '-'),
+                                    'letter-method-box',
+                                    selectedMethod,
+                                    imageUrl
+                                );
+                                document.getElementById('letter-method').parentNode.replaceChild(scratchBox, document.getElementById('letter-method'));
+                                
+                                isSpinning = false;
+                                spinBtn.disabled = false;
+                            });
+                        });
+                    });
+                } else if (selectedType === 'activity') {
+                    template = `<div class="first-p">Invite <div class="receiver-placeholder"></div></div> <br>in the <span id="activity-time" class="spinning-item">...</span> <br>to <span id="activity-place" class="spinning-item">...</span> <br>to <span id="activity-action" class="spinning-item">...</span>.`;
+                    rouletteContent.innerHTML = `<h3>${template}</h3>`;
+
+                    // Replace placeholder with receiver preview
+                    const placeholder = rouletteContent.querySelector('.receiver-placeholder');
+                    const receiverPreview = createReceiverPreview();
+                    placeholder.parentNode.replaceChild(receiverPreview, placeholder);
+
+                    spinSequentially('activity-time', options.activity.times, 1500, function() {
+                        const selectedTime = document.getElementById('activity-time').textContent;
+                        const imageUrl = `img/activity-time_${selectedTime.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
+                        const scratchBox = createScratchBox(
+                            selectedTime.replace(/[^a-zA-Z0-9]/g, '-'),
+                            'activity-time-box',
+                            selectedTime,
+                            imageUrl
+                        );
+                        document.getElementById('activity-time').parentNode.replaceChild(scratchBox, document.getElementById('activity-time'));
+                        
+                        spinSequentially('activity-place', options.activity.places, 2000, function() {
+                            const selectedPlace = document.getElementById('activity-place').textContent;
+                            const imageUrl = `img/activity-place_${selectedPlace.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
+                            const scratchBox = createScratchBox(
+                                selectedPlace.replace(/[^a-zA-Z0-9]/g, '-'),
+                                'activity-place-box',
+                                selectedPlace,
+                                imageUrl
+                            );
+                            document.getElementById('activity-place').parentNode.replaceChild(scratchBox, document.getElementById('activity-place'));
+                            
+                            spinSequentially('activity-action', options.activity.actions, 1500, function() {
+                                const selectedAction = document.getElementById('activity-action').textContent;
+                                const imageUrl = `img/activity-action_${selectedAction.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
+                                const scratchBox = createScratchBox(
+                                    selectedAction.replace(/[^a-zA-Z0-9]/g, '-'),
+                                    'activity-action-box',
+                                    selectedAction,
+                                    imageUrl
+                                );
+                                document.getElementById('activity-action').parentNode.replaceChild(scratchBox, document.getElementById('activity-action'));
+                                
+                                isSpinning = false;
+                                spinBtn.disabled = false;
+                            });
+                        });
+                    });
+                }
+            }
+
+            function spinSequentially(elementId, optionsArray, duration, callback) {
+                const element = document.getElementById(elementId);
+                let startTime = Date.now();
+                let interval = 80;
+                let slowdownFactor = 0.98;
+                let currentInterval = interval;
+
+                const updateSpinner = () => {
+                    const randomOption = optionsArray[Math.floor(Math.random() * optionsArray.length)];
+                    element.textContent = randomOption;
+
+                    const elapsedTime = Date.now() - startTime;
+
+                    if (elapsedTime < duration) {
+                        if (elapsedTime > duration * 0.5) {
+                            currentInterval *= slowdownFactor;
+                        }
+                        setTimeout(updateSpinner, currentInterval);
+                    } else {
+                        const finalOption = optionsArray[Math.floor(Math.random() * optionsArray.length)];
+                        element.textContent = finalOption;
+                        element.classList.add('final-selection');
+                        if (callback) callback();
+                    }
+                };
+
+                updateSpinner();
+            }
+        });
+    </script>
+</body>
+</html>
