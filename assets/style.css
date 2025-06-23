@@ -48,7 +48,7 @@ h1 {
     text-shadow: 1px 1px 2px royalblue;
     font-size: 28px;
 		font-family: "skeletor_40";
-		padding: 20px 0px;
+		padding: 20px 16px;
 	/*font-variation-settings: "skeletor_80";
 	transition: font-variation-settings 1.3s ease;*/
 	}
@@ -58,6 +58,15 @@ h1:hover {
 }
 
 
+.name-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.darkmode-decoration {
+	color: whitesmoke;
+}
 
 
 .desc {
