@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url("") 0 0, auto;
+}
 
 
 
@@ -18,6 +24,8 @@
 }*/
 
 
+
+
 body {
 	background: whitesmoke;
 	color: cornflowerblue;
@@ -25,14 +33,22 @@ body {
 }
 
 
+#left-column {
+	display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 24px 0px;
+}
+
 
 
 h1 {
-    
     font-display: flex ;
     text-shadow: 1px 1px 2px royalblue;
-    font-size: 56px;
+    font-size: 28px;
 		font-family: "skeletor_40";
+		padding: 20px 0px;
 	/*font-variation-settings: "skeletor_80";
 	transition: font-variation-settings 1.3s ease;*/
 	}
@@ -41,6 +57,12 @@ h1:hover {
   font-family: "skeletor_80";
 }
 
+
+
+
+.desc {
+	padding: 20px 0px 10px 0px;
+}
 
 
 
@@ -54,6 +76,10 @@ h1:hover {
 }
 
 
+.letter-button:hover {
+	color: hotpink;
+}
+
 
 /* id 일 경우 #아이디이름 {}*/
 /* class 일 경우 .클래스이름 {}
@@ -66,27 +92,55 @@ h1:hover {
 
 
 
+
 a {
 	color: red;
 }
 
 a:hover {
 	color: blue;
-
 }
 
 
 body.dark {
-  background: #333;
+  background: midnightblue;
   color: white;
 }
 /*body.dark란? body that has 'dark' class*/
 
 
 button {
-	background-color: skyblue;
+		background-color: hotpink;
+    padding: 3px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-style: dotted;
 }
 
+button:hover {
+	background: deeppink;
+}
+
+
+.project {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 72px;
+}
+
+.project-button {
+	color: pink;  
+	text-shadow: 1px 1px 2px pink;
+	padding: 0px 16px;
+}
+
+.project-button:hover {
+	color: hotpink;
+}
 
 
 /* 태그일 경우
